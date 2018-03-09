@@ -1,11 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Actions from './Actions';
+import { getSuggestedOpportunity } from '../reducer';
 
-const Generator = () => (
+const Generator = ({ suggestedOpportunity }) => (
   <div>
-    <h1>How might we increase documentation in a way that builds trust?</h1>
+    <h1>{suggestedOpportunity}</h1>
     <Actions />
   </div>
 );
 
-export default Generator;
+Generator.propTypes = {
+  suggestedOpportunity: PropTypes.string,
+};
+
+Generator.defaultProps = {
+  suggestedOpportunity: '',
+};
+
+const mapStateToProps = state => ({
+  suggestedOpportunity: getSuggestedOpportunity(state),
+});
+
+export default connect(mapStateToProps)(Generator);
