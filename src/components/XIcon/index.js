@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './XIcon.css';
 
 const XIcon = ({ onIconClicked }) => (
-  <div id="xIcon" onClick={onIconClicked} onKeyUp={onIconClicked} role="button" tabIndex={0}>
+  <div id="xIcon" onClick={onIconClicked} onKeyUp={(e) => { if (e.key === 'Enter') onIconClicked(); }} role="button" tabIndex={0}>
     <svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <title>XMark</title>
       <desc>Created with Sketch.</desc>
