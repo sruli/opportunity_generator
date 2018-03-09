@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Actions from './Actions';
 import { getSuggestedOpportunity } from '../reducer';
+import './Generator.css';
 
 const Generator = ({ suggestedOpportunity }) => (
   <div>
-    <h1>{suggestedOpportunity}</h1>
-    <Actions />
+    <h1 id="suggestedOpportunity">{suggestedOpportunity}</h1>
+    <Actions {...{ suggestedOpportunity }} />
   </div>
 );
 

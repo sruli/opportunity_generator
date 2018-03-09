@@ -1,6 +1,6 @@
 #main {
   font-family: Marion;
-  width: 35rem;
+  width: 45rem;
   text-align: center;
   margin-left: auto;
   margin-right:auto;
@@ -13,3 +13,10 @@
   font-weight: normal;
 }
 
+#main p {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0;
+}

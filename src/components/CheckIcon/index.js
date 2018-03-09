@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CheckIcon.css';
 
-export default () => (
-  <div id="checkIcon">
+const CheckIcon = ({ onIconClicked }) => (
+  <div id="checkIcon" onClick={onIconClicked} onKeyUp={onIconClicked} role="button" tabIndex={0}>
     <svg width="49px" height="35px" viewBox="0 0 49 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <title>Check Icon</title>
       <desc>Created with Sketch.</desc>
@@ -22,3 +23,13 @@ export default () => (
     </svg>
   </div>
 );
+
+CheckIcon.propTypes = {
+  onIconClicked: PropTypes.func,
+};
+
+CheckIcon.defaultProps = {
+  onIconClicked: () => {},
+};
+
+export default CheckIcon;

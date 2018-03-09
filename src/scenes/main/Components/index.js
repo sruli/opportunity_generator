@@ -1,6 +1,10 @@
 import React from 'react';
 import Generator from './Generator';
+import SavedOpportunitiesList from './SavedOpportunitiesList';
 
 export default () => (
-  <Generator />
+  <div>
+    <Generator />
+    <SavedOpportunitiesList />
+  </div>
 );
