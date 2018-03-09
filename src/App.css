@@ -1,28 +1,15 @@
-.App {
+#main {
+  font-family: Marion;
+  width: 35rem;
   text-align: center;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 2rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+#main h1 {
+  font-size: 3rem;
+  font-weight: normal;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}

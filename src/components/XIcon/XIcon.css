@@ -1,0 +1,7 @@
+#xIcon:hover {
+  cursor: pointer;
+}
+
+#xIcon:active {
+  opacity: 0.5;
+}
