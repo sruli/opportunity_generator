@@ -1,0 +1,7 @@
+#trashCanIcon:hover {
+  cursor: pointer;
+}
+
+#trashCanIcon:active {
+  opacity: 0.1;
+}
