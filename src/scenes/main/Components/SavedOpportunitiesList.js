@@ -15,7 +15,7 @@ const SavedOpportunitiesList = ({ savedOpportunities }) => (
 );
 
 SavedOpportunitiesList.propTypes = {
-  savedOpportunities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  savedOpportunities: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({
