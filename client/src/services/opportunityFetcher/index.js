@@ -1,4 +1,5 @@
 import { VERBS, NOUNS, CONNECTORS } from './constants';
+import generateUuid from '../uuidGenerator';
 
 const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
 
@@ -13,5 +14,8 @@ export default () => {
 
   hmw += `${getRandom(NOUNS)}?`;
 
-  return hmw;
+  return {
+    uuid: generateUuid(),
+    content: hmw,
+  };
 };

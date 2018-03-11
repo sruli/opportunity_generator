@@ -16,7 +16,10 @@ const Actions = ({ onXIconClicked, onCheckIconClicked, suggestedOpportunity }) =
 Actions.propTypes = {
   onXIconClicked: PropTypes.func.isRequired,
   onCheckIconClicked: PropTypes.func.isRequired,
-  suggestedOpportunity: PropTypes.string.isRequired,
+  suggestedOpportunity: PropTypes.shape({
+    uuid: PropTypes.string,
+    content: PropTypes.string,
+  }).isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({

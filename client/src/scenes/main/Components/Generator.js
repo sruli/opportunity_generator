@@ -7,17 +7,20 @@ import './Generator.css';
 
 const Generator = ({ suggestedOpportunity }) => (
   <div>
-    <h1 id="suggestedOpportunity">{suggestedOpportunity}</h1>
+    <h1 id="suggestedOpportunity">{suggestedOpportunity.content}</h1>
     <Actions {...{ suggestedOpportunity }} />
   </div>
 );
 
 Generator.propTypes = {
-  suggestedOpportunity: PropTypes.string,
+  suggestedOpportunity: PropTypes.shape({
+    uuid: PropTypes.string,
+    content: PropTypes.string,
+  }),
 };
 
 Generator.defaultProps = {
-  suggestedOpportunity: '',
+  suggestedOpportunity: {},
 };
 
 const mapStateToProps = state => ({

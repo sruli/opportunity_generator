@@ -6,7 +6,6 @@ import {
   TRASH_CAN_CLICKED,
   UI_FETCHED,
 } from './constants';
-import generateUuid from '../../services/uuidGenerator';
 
 export const getSuggestedOpportunity = state => (
   state[SCENE_NAME].suggestedOpportunity
@@ -16,7 +15,7 @@ export const getSavedOpportunities = state => (
   state[SCENE_NAME].savedOpportunities
 );
 
-const suggestedOpportunityReducer = (state = '', action) => {
+const suggestedOpportunityReducer = (state = {}, action) => {
   switch (action.type) {
     case NEXT_OPPORTUNITY_FETCHED:
     case UI_FETCHED:
@@ -32,10 +31,7 @@ const savedOpportunitiesReducer = (state = [], action) => {
       return action.payload.allOpportunities || [];
     case CHECK_ICON_CLICKED:
       return [
-        {
-          uuid: generateUuid(),
-          content: action.payload.suggestedOpportunity,
-        },
+        action.payload.suggestedOpportunity,
         ...state,
       ];
     case TRASH_CAN_CLICKED:
