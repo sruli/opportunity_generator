@@ -11,3 +11,7 @@
 #opportunity:hover {
   background-color: #EBE9E9;
 }
+
+#opportunity p {
+  text-align: left;
+}
