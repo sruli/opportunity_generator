@@ -4,6 +4,7 @@ import {
   NEXT_OPPORTUNITY_FETCHED,
   CHECK_ICON_CLICKED,
   TRASH_CAN_CLICKED,
+  UI_FETCHED,
 } from './constants';
 import generateUuid from '../../services/uuidGenerator';
 
@@ -18,6 +19,7 @@ export const getSavedOpportunities = state => (
 const suggestedOpportunityReducer = (state = '', action) => {
   switch (action.type) {
     case NEXT_OPPORTUNITY_FETCHED:
+    case UI_FETCHED:
       return action.payload.nextOpportunity;
     default:
       return state;
@@ -26,6 +28,8 @@ const suggestedOpportunityReducer = (state = '', action) => {
 
 const savedOpportunitiesReducer = (state = [], action) => {
   switch (action.type) {
+    case UI_FETCHED:
+      return action.payload.allOpportunities || [];
     case CHECK_ICON_CLICKED:
       return [
         {
