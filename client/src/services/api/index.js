@@ -16,8 +16,25 @@ export const createOpportunity = suggestedOpportunity => (
       method: 'POST',
       body: JSON.stringify(suggestedOpportunity),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(json => resolve(json))
+      .catch((error) => {
+        console.log(error)
+        return reject(error);
+      });
+  })
+);
+
+export const destroyOpportunity = uuid => (
+  new Promise((resolve, reject) => {
+    window.fetch(`api/opportunities/${uuid}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then(response => response.json())
       .then(json => resolve(json))

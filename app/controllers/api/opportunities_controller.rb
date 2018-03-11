@@ -9,6 +9,12 @@ module Api
       render json: {}
     end
 
+    def destroy
+      opportunity = Opportunity.find_by(uuid: params[:id])
+      opportunity.destroy if opportunity.present?
+      render json: {}
+    end
+
     private
 
     def create_opportunity_params
